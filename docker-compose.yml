@@ -1,0 +1,9 @@
+services:
+  job-bot:
+    build: .
+    volumes:
+      - .:/app
+      - ./last_alert.txt:/app/last_alert.txt
+    env_file:
+      - .env
+    restart: unless-stopped
